@@ -13,6 +13,7 @@ import {
   createContactAction,
   deleteContactAction,
   editContactAction,
+  favoriteContactAction,
 } from './actions/createContactAction.js';
 import EditContact from './EditContact.jsx';
 import Index from './Index.jsx';
@@ -30,6 +31,7 @@ const router = createBrowserRouter([
         path: '/contacts/:contactId',
         element: <Contact />,
         loader: getContactLoader,
+        action: favoriteContactAction,
       },
       {
         path: '/contacts/:contactId/edit',
