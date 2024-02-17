@@ -2,7 +2,7 @@ import { redirect } from 'react-router-dom';
 import { createContact, deleteContact, updateContact } from '../contacts';
 export async function createContactAction() {
   const contact = await createContact();
-  return { contact };
+  return redirect(`/contacts/${contact.id}/edit`);
 }
 export async function editContactAction({ request, params }) {
   const formData = await request.formData();
